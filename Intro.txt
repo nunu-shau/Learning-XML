@@ -1,0 +1,15 @@
+XML has several features:
+
+1. XML was designed to store and transport data.
+
+2. The XML language has no predefined tags.(compared to HTML)
+
+3. The XML language is eXtensible markup language. (It lets you define your own tags)
+
+4. The XML language is self-descriptive. (Human is able to read and understand from the tags)
+
+5. XML separates information from presentation. (XML file doesn't have a presentation layer or style information associated with it)
+
+
+
+
