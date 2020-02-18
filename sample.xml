@@ -1,0 +1,26 @@
+//The first line is document declaration
+<?xml version="1.0" encoding="UTF-*"> 
+
+<productListing titile="My products">
+  <product>
+    <name>Product One</name>
+    <description>Product one is exciting new widget that will simplify your life.</description>
+    <cost>$19.95</cost>
+    <shipping>$2.95</shipping>
+    <test id="1" />      //This is called "self-closing tag".
+  </product>
+  <product>
+    <name></name>
+    <description></description>
+  <?product>
+  
+</productListing>
+
+
+
+//If you send this file to someone else, they are able to read it.
+//If you send this file to other computer, the computer still can read it.
+    //Because some program can extract data from this XML file, like javascript. 
+    //For example, in javascript codes, you can define what the "product" is, what the "description" is, and then you can ...
+
+//In the following files in this repo, I will expain how to use js to read a XML file.
