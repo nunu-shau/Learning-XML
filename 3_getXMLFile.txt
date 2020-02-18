@@ -1,0 +1,32 @@
+1. 想要从Server获取资源，需要request and receive from server。为了避免刷新整个页面，我们选择用XMLHttpRequest Obejct来发送Http请求。
+   <script>
+       function loadXMLDoc() {
+           var xhttp = new XMLHttpRequest();               //创建一个XMLHttpRequest obejct
+           xhttp.onreadystatechange = function(){
+               if (this.readyState == 4 && this.sttue == 200) {
+                   document.getElementById("demo").innerHTML = this.responseText;     //见下面的分析
+               }
+           }
+           xhttp.open("GET", "xmlhttp_info.txt", true);    //这里注明了http method和需要获取的filename
+           xhttp.send();                                   //发送http request
+       }
+   <script>
+   
+   
+   ps: 当XMLHttpRequest对象xhttp“成功”取到(满足该条件：this.readyState == 4 && this.sttue == 200)xmlhttp_info.txt后，
+       xhttp会具备两个属性: 1. xhttp.responseText将xmlhttp_info.txt作为string返回；
+                          2. xhttp.responseXML将xmlhttp_info.txt作为XML DOM object返回。
+       我们最终是需要string还是DOM object，主要取决于我们在javascript code中要怎么利用 这个从server取回来的文件。                                         
+       
+       XML DOM object说白是：XML document被转换成具有DOM结构的document，这样就可以通过javascript对它进行一系列操作了。
+       
+       
+2. 浏览器也提供了内建的方法：将string转换成XML DOM object：
+   var text = "<bookstore><book>" + "<title>Everyday Italian</title>" + "<author>Giada De Laurentiis</author>" + "<year>2005</year>" + "</book></bookstore>";
+   parser = new DOMParser();
+   xmlDoc = parser.parseFromString(text, "text/xml"); //这里就得到了一个XML DOM object
+   
+   
+   
+   
+       
